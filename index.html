@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengarelli</title>
+    <!-- IMPORTANT! KEEP THE CDN FOR THE STYLES TO WORK -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- IMPORTANT! KEEP THE CDN FOR THE STYLES TO WORK -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body >
+
+    <!-- NAVBAR -->
+    <div
+        class="navbar h-24 sm:h-[156px] relative z-10 w-full flex items-center justify-between bg-[#232323] px-[8vw] md:px-[6vw]">
+        <a href="/">
+            <div class='max-w-[25vw]'><img src='img/NavbarLogo.png' alt="" /></div>
+        </a>
+        <div class='hidden lg:flex text-base font-bold space-x-9 justify-end items-center'>
+            <a href="/">
+                <p class="cursor-pointer">INICIO</p>
+            </a>
+            <div onclick="toggleMenu()" class="flex items-center justify-center gap-2 cursor-pointer">PRODUCTOS
+                <span class="text-xl ">
+                    <img src='img/Arrow.png' alt="" />
+                </span>
+            </div>
+
+            <a href="">
+                <p class="cursor-pointer">EMPRESA</p>
+            </a>
+            <a href='quality.html'>
+                <p class="cursor-pointer">POLÍTICAS DE CALIDAD</p>
+            </a>
+            <a href='contact.html'>
+                <p class="cursor-pointer">CONTACTO</p>
+            </a>
+
+            <div class='flex items-center space-x-[10px]'>
+                <img class="cursor-pointer" src='img/InstaLink.png' alt="" />
+                <img class="cursor-pointer" src='img/FacebookLink.png' alt="" />
+                <img class="cursor-pointer" src='img/LinkedinLink.png' alt="" />
+            </div>
+        </div>
+        <div onclick="toggleMenuMobile()" class='lg:hidden inline-block'> <img src='img/Burguer.png' alt="" /></div>
+
+
+        <div id="menu"
+            class="hidden absolute bg-[#2E2E2E] navbar pt-9 pb-12 w-full inset-x-0 top-full px-[8vw] md:px-[6vw]">
+            <div class="mx-auto mb-6">
+                <p class="font-bold mb-2">CATEGORIAS DE PRODUCTOS</p>
+                <div class="w-full h-[1px] bg-white"></div>
+            </div>
+            <div>
+                <div class='flex justify-center 2xl:justify-between gap-5'>
+                    <div class='grid md:grid-cols-2 xl:grid-cols-3 gap-y-11 relative '>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg'>
+                                <img class="w-[90px]" src='img/Racks1.png' alt="" />
+                                <div class='md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>RACKS</p>
+                                    <p>Calidad e innovación.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg '>
+                                <img class="" src='img/Racks2.png' alt="" />
+                                <div class=' md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>GÓNDOLAS</p>
+                                    <p>Excelencia y calidad.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg '>
+                                <img class="" src='img/Racks3.png' alt="" />
+                                <div class='md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>VERDULERÍA</p>
+                                    <p>Calidad e innovación.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg '>
+                                <img class="" src='img/Racks4.png' alt="" />
+                                <div class='md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>MOSTRADORES</p>
+                                    <p>Resistentes con líneas <br /> de diseño.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg '>
+                                <img class="" src='img/Racks5.png' alt="" />
+                                <div class='md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>PASILLOS DE REVISIÓN</p>
+                                    <p>Nuevo modelo con <br /> espacio para CPU.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex '>
+                                <div class='flex items-center gap-x-6 limitImg '>
+                                    <img class="" src='img/Racks6.png' alt="" />
+                                    <div class='md:text-lg font-light'>
+                                        <p class='text-lg md:text-xl font-bold'>ARTICULOS DE ALAMBRE</p>
+                                        <p>Durables y funcionables.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <img class="max-h-56 hidden 2xl:block" src="img/headerImgNavbar.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- hidden -->
+    </div>
+    <!-- NAVBAR -->
+
+    <!-- MENU (desplegable mobile) -->
+
+    <div id="menu-mobile"
+        class="hidden z-50 fixed bg-[#232323] max-h-[100vh] text-base w-full overflow-y-auto inset-0 ">
+
+        <div
+            class="mb-5 h-24 sm:h-[156px] relative z-10 w-full flex items-center justify-between  px-[8vw] md:px-[6vw]">
+            <div class='max-w-[25vw]'><img src='img/NavbarLogo.png' alt="" /></div>
+            <div onclick="toggleMenuMobile()" class=''> <img src='img/Burguer.png' alt="" /></div>
+            <!-- hidden -->
+        </div>
+
+        <div class="mx-auto max-w-[80vw] ">
+            <div class="mb-5">
+                <a href="/">
+                    <p class="font-bold mb-2">INICIO</p>
+                    <div class="w-full h-[1px] bg-[#FC030A]"></div>
+                </a>
+            </div>
+            <div class="mb-5">
+                <div onclick="toggleMobileProductGrid()" class="flex w-full justify-between items-center">
+                    <p class="font-bold mb-2">PRODUCTOS</p>
+                    <img src='img/Arrow.png' alt="" />
+                </div>
+                <div class="w-full h-[1px] bg-[#FC030A]"></div>
+            </div>
+
+
+
+
+            <!-- Products section-mobile menu -->
+            <div id="mobile-product-grid"
+                class='hidden  grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-2 mb-5 relative '>
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg'>
+                        <img class="w-[48px]" src='img/Racks1.png' alt="" />
+                        <div class='font-light'>
+                            <p class='font-bold'>RACKS</p>
+                            <!-- <p class="text-sm">Calidad e innovación.</p> -->
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg '>
+                        <img class="w-[48px]" src='img/Racks2.png' alt="" />
+                        <div class='md:text-lg font-light'>
+                            <p class=' font-bold'>GÓNDOLAS</p>
+                            <!-- <p class="text-sm">Excelencia y calidad.</p> -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg '>
+                        <img class="w-[48px]" src='img/Racks3.png' alt="" />
+                        <div class='md:text-lg font-light'>
+                            <p class='font-bold'>VERDULERÍA</p>
+                            <!-- <p class="text-sm">Calidad e innovación.</p> -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg '>
+                        <img class="w-[48px]" src='img/Racks4.png' alt="" />
+                        <div class='md:text-lg font-light'>
+                            <p class='font-bold'>MOSTRADORES</p>
+                            <!-- <p class="text-sm">Resistentes con líneas <br /> de diseño.</p> -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg '>
+                        <img class="w-[48px]" src='img/Racks5.png' alt="" />
+                        <div class='md:text-lg font-light'>
+                            <p class='font-bold'>PASILLOS DE REVISIÓN</p>
+                            <!-- <p class="text-sm">Nuevo modelo con <br /> espacio para CPU.</p> -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/products.html">
+                    <div class='flex '>
+                        <div class='flex items-center gap-x-6 limitImg '>
+                            <img class="w-[48px]" src='img/Racks6.png' alt="" />
+                            <div class='md:text-lg font-light'>
+                                <p class='font-bold'>ARTICULOS DE ALAMBRE</p>
+                                <!-- <p class="text-sm">Durables y funcionables.</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Products section-mobile menu -->
+
+
+            <div class="mb-5">
+                <a href="/">
+                    <p class="font-bold mb-2">EMPRESA</p>
+                    <div class="w-full h-[1px] bg-[#FC030A]"></div>
+                </a>
+            </div>
+            <div class="mb-5">
+                <a href="quality.html">
+                    <p class="font-bold mb-2">POLÍTICAS DE CALIDAD</p>
+                    <div class="w-full h-[1px] bg-[#FC030A]"></div>
+                </a>
+            </div>
+            <div class="mb-5">
+                <a href="contact.html">
+                    <p class="font-bold mb-2">CONTACTO</p>
+                    <div class="w-full h-[1px] bg-[#FC030A]"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENU (desplegable mobile)-->
+
+    <!-- CONTENT  -->
+
+    <!-- <div class="flex overflow-hidden">
+        <img class="w-screen h-auto my-14" src='img/Banner-Home.jpg' alt="" />
+        <img class="w-screen h-auto my-14" src='img/Banner-Home.jpg' alt="" />
+        <img class="w-screen h-auto my-14" src='img/Banner-Home.jpg' alt="" />
+    </div> -->
+
+    <div id="slider-container overflow-hidden w-screen relative">
+        <div id="slider" class="duration-500 ease-in-out flex my-14">
+            <div class="slider-item">
+                <!-- desktop banner -->
+                <img class=" min-w-[100vw] hidden md:block h-auto" src='img/Banner-Home-1.jpg' alt="" />
+                <!-- mobile banner -->
+                <img class=" min-w-[100vw] md:hidden h-auto" src='img/Banner-Home-mobile-1.jpg' alt="" />
+            </div>
+            <div class="slider-item">
+                <!-- desktop banner -->
+                <img class=" min-w-[100vw] hidden md:block h-auto" src='img/Banner-Home-2.jpg' alt="" />
+                <!-- mobile banner -->
+                <img class=" min-w-[100vw] md:hidden h-auto" src='img/Banner-Home-mobile-1.jpg' alt="" />
+            </div>
+            <div class="slider-item">
+                <!-- desktop banner -->
+                <img class=" min-w-[100vw] hidden md:block h-auto" src='img/Banner-Home-3.jpg' alt="" />
+                <!-- mobile banner -->
+                <img class=" min-w-[100vw] md:hidden h-auto" src='img/Banner-Home-mobile-1.jpg' alt="" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class='mb-40'>
+        <div class='flex justify-end mr-[4vw]'>
+            <div class='hidden sm:flex font-light items-center space-x-5'>
+                <p>Escribinos a nuestro WhatsApp</p>
+                <div class='bg-[#36C144] rounded-full w-12 h-12 grid place-content-center'> <img src='img/Whatsapp.png'
+                        alt="" /></div>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class='flex justify-center items-center gap-5 mb-16 max-w-[82vw] mx-auto'>
+            <div class='hidden sm:inline-block h-[2px] w-full bg-[#C3232A]'></div>
+
+            <div class='text-center whitespace-nowrap'>
+                <p class='font-light md:text-xl'>ENCONTRÁ LO QUE NECESITÁS</p>
+                <p class='font-bold text-xl md:text-2xl'>TODOS NUESTROS PRODUCTOS</p>
+            </div>
+            <div class='hidden sm:inline-block h-[2px] w-full bg-[#C3232A]'></div>
+
+        </div>
+        <!--  -->
+        <div class='flex justify-center'>
+            <div
+                class='grid mb-20 md:mb-40 md:mx-auto md:grid-cols-2 xl:grid-cols-3 gap-y-11 max-w-[90vw] md:max-w-[82vw] xl:max-w-[70vw] relative md:left-6 xl:left-12'>
+                <div class='flex items-center gap-x-6 limitImg'>
+                    <img src='img/Racks1.png' alt="" />
+                    <div class='md:text-lg font-light'>
+                        <p class='text-lg md:text-xl font-bold'>RACKS</p>
+                        <p>Calidad e innovación.</p>
+                    </div>
+                </div>
+
+                <div class='flex items-center gap-x-6 limitImg '>
+                    <img src='img/Racks2.png' alt="" />
+                    <div class=' md:text-lg font-light'>
+                        <p class='text-lg md:text-xl font-bold'>GÓNDOLAS</p>
+                        <p>Excelencia y calidad.</p>
+                    </div>
+                </div>
+                <div class='flex items-center gap-x-6 limitImg '>
+                    <img src='img/Racks3.png' alt="" />
+                    <div class=' md:text-lg font-light'>
+                        <p class='text-lg md:text-xl font-bold'>VERDULERÍA</p>
+                        <p>Calidad e innovación.</p>
+                    </div>
+                </div>
+                <div class='flex items-center gap-x-6 limitImg '>
+                    <img src='img/Racks4.png' alt="" />
+                    <div class=' md:text-lg font-light'>
+                        <p class='text-lg md:text-xl font-bold'>MOSTRADORES</p>
+                        <p>Resistentes con líneas <br /> de diseño.</p>
+                    </div>
+                </div>
+                <div class='flex items-center gap-x-6 limitImg '>
+                    <img src='img/Racks5.png' alt="" />
+                    <div class=' md:text-lg font-light'>
+                        <p class='text-lg md:text-xl font-bold'>PASILLOS DE REVISIÓN</p>
+                        <p>Nuevo modelo con <br /> espacio para CPU.</p>
+                    </div>
+                </div>
+                <div class='flex '>
+                    <div class='flex items-center gap-x-6 limitImg '>
+                        <img src='img/Racks6.png' alt="" />
+                        <div class=' md:text-lg font-light'>
+                            <p class='text-lg md:text-xl font-bold'>ARTICULOS DE ALAMBRE</p>
+                            <p>Durables y funcionables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class='px-[8vw] mb-14  md:mb-36 md:px-20'>
+            <div class='flex flex-col xl:flex-row justify-between max-w-[1575px] mx-auto gap-y-10'>
+                <div class='font-light text-lg md:text-xl flex flex-col justify-center'>
+                    <p>Líderes en instalaciones para negocios y supermercados</p>
+                    <p class='text-xl md:text-2xl font-bold'>INDUSTRIAS MENGARELLI</p>
+                </div>
+                <div
+                    class='flex flex-wrap xl:flex-nowrap flex-row justify-between lg:items-center flex-1 ml-8 sm:ml-0 xl:ml-20 gap-10'>
+                    <div class='flex-1 flex items-center gap-x-8 limitImg '>
+                        <img src='img/Trayectoria.png' alt="" />
+                        <div class='md:text-lg font-bold whitespace-nowrap'>
+                            <p class='text-5xl '>50</p>
+                            <p>Años de trayectoria</p>
+                        </div>
+                    </div>
+                    <div class='flex-1 flex items-center gap-x-8 limitImg '>
+                        <img src='img/icon-mt-est.png' alt="" />
+                        <div class='md:text-lg font-bold whitespace-nowrap'>
+                            <p class='text-5xl'>3500</p>
+                            <p>m2 de Fábrica</p>
+                        </div>
+                    </div>
+                    <div class='flex-1 flex items-center gap-x-8 limitImg '>
+                        <img src='img/icon-gondola-est.png' alt="" />
+                        <div class='md:text-lg font-bold whitespace-nowrap'>
+                            <p class='text-5xl'>10000</p>
+                            <p>Góndolas por año</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class='px-10 md:px-20 mb-20 md:mb-40'>
+            <div class='mx-auto max-w-[1315px] flex flex-wrap gap-5 sm:text-lg md:text-[22px]'>
+                <div class='flex-1 relative md:min-w-[398px]'>
+                    <div class="px-9 xl:min-h-[442px] py-14 bg-[#282828]">Ofrecer soluciones en materia de Almacenaje,
+                        Estiba y Equipamiento comercial , satisfaciendo las necesidades de nuestros clientes, basándonos
+                        en los valores que guían nuestro proceder.</div>
+                    <p class='text-4xl md:text-5xl font-bold relative -top-7 -left-5 xl:-left-14'>MISIÓN</p>
+                </div>
+
+                <div class='flex-1 relative md:min-w-[398px]'>
+                    <div class=" px-9 xl:min-h-[442px] py-14 bg-[#C3232A]">Ser líderes en el sector, mediante un
+                        desempeño sustentable, basado en la excelencia y calidad de nuestros productos, superando las
+                        expectativas de nuestros clientes, nuestra gente y la comunidad.</div>
+                    <p class='text-4xl md:text-5xl font-bold relative -top-7 -left-5 xl:-left-14'>VISIÓN</p>
+                </div>
+
+                <div class='flex-1 relative md:min-w-[398px]'>
+                    <div class="px-9 xl:min-h-[442px] py-14 bg-[#282828]">Calidad <br />
+                        Excelencia en el servicio<br />
+                        Honestidad<br />
+                        Satisfacción de nuestros colaboradores y clientes<br />
+                        Obtener una rentabilidad sustentable<br />
+                        Cuidado del Medio Ambiente<br />
+                        Contribuir con nuestra comunidad<br />
+                    </div>
+
+                    <p class='text-4xl md:text-5xl font-bold relative -top-7 -left-5 xl:-left-14'>VALORES</p>
+                </div>
+
+            </div>
+        </div>
+        <!--  -->
+        <div class='px-10 md:px-20'>
+            <div class='mx-auto max-w-[1315px] flex flex-col xl:flex-row gap-x-5 gap-y-20 md:text-lg'>
+                <div class="flex-1 ">
+                    <img class='mb-14' src='img/WhiteLogo.png' alt="" />
+                    <p class='xl:max-w-[510px]'>Somos una empresa dedicada a ofrecer soluciones en materia de
+                        Almacenaje, Estiba y Equipamiento comercial, satisfaciendo las necesidades de nuestros clientes,
+                        basándonos en los valores que guían nuestro proceder.</p>
+                </div>
+                <div class="flex-1 self-center"><img src='img/VideoPlaceholder.png' alt="" /></div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- contact Section -->
+    <div class='min-h-[500px] bg-[#282828] overflow-hidden'>
+        <div class='flex flex-col-reverse lg:flex-row'>
+            <div class="flex-1 flex gap-x-20">
+                <div class="hidden flex-1 max-h-[740px] 2xl:flex items-center"><img src='img/ContactGear.png' alt="" />
+                </div>
+                <div class="flex-1 flex flex-col justify-center py-20  px-12 md:px-16 xl:px-24 2xl:px-0">
+                    <div class='text-sm font-light '>
+                        <div class='mb-8'>
+                            <input
+                                class="mt-1 mb-1 italic px-5 py-3 border-white border-[0.5px] appearance-none bg-transparent  w-full text-[#d5d5d5]  placeholder-white mr-3 leading-tight focus:outline-none sm:text-lg md:text-xl  font-light"
+                                type="text" placeholder='Nombre y Apellido' />
+                        </div>
+                        <div class='mb-8'>
+                            <input
+                                class="mt-1 mb-1 italic px-5 py-3 border-white border-[0.5px] appearance-none bg-transparent  w-full text-[#d5d5d5]  placeholder-white mr-3 leading-tight focus:outline-none  sm:text-lg md:text-xl  font-light"
+                                type="text" placeholder='Email de contacto' />
+                        </div>
+                        <div class='mb-8'>
+                            <input
+                                class="mt-1 mb-1 italic px-5 py-3 border-white border-[0.5px] appearance-none bg-transparent  w-full text-[#d5d5d5]  placeholder-white mr-3 leading-tight focus:outline-none sm:text-lg  md:text-xl  font-light"
+                                type="text" placeholder='Teléfono' />
+                        </div>
+                        <div class='mb-8'>
+                            <input
+                                class="mt-1 mb-1 italic px-5 py-3 border-white border-[0.5px] appearance-none bg-transparent  w-full text-[#d5d5d5]  placeholder-white mr-3 leading-tight focus:outline-none sm:text-lg  md:text-xl  font-light"
+                                type="text" placeholder='Localidad' />
+                        </div>
+                        <div class='mb-8'>
+                            <textarea
+                                class="mb-3 px-5 py-3 italic appearance-none bg-transparent border-white border-[0.5px]  w-full text-[#d5d5d5]  placeholder-white mr-3 leading-tight focus:outline-none sm:text-lg md:text-xl font-light"
+                                type="text" placeholder='Escribe tu mensaje...'></textarea>
+                        </div>
+                        <div class='flex justify-end text-lg sm:text-xl gap-5 font-bold'>
+                            <div class='bg-white text-black cursor-pointer py-3 px-8'>ENVIAR MENSAJE</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flex-1 flex justify-end ">
+                <div class='relative w-full xl:w-auto 2xl:ml-20'>
+                    <img class='w-full xl:w-auto lg:h-full' src='img/ContactSectionImg.png' alt="" />
+                    <div class="absolute bg-[#C3232A] bg-opacity-90 mix-blend-multiply inset-0"></div>
+                    <div class='absolute inset-0 py-20 px-9 '>
+                        <h2 class='text-3xl sm:text-4xl md:text-5xl font-bold leading-tight'>
+                            CONTACTE <br />
+                            <span class='font-normal'>CON NOSOTROS.</span>
+
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- contact Section -->
+
+
+
+
+
+    <!-- CONTENT -->
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <div class='w-full bg-[#C3232A] px-[6vw] text-white pt-[69px] pb-8 '>
+        <div class='flex flex-col-reverse xl:flex-row items-end mb-8 gap-y-10'>
+            <div class='flex flex-1 flex-col w-full xl:w-auto justify-between mb'>
+                <div class='flex gap-3 mb-[34px]'>
+
+                    <a href="/" target="_blank"><img class='w-auto h-auto' alt='ig Logo'
+                            src='img/LinkedinLink.png' /></a>
+
+                    <a href="/" target="_blank"><img class='w-auto h-auto' alt='ig Logo' src='img/InstaLink.png' /></a>
+
+                    <a href="/" target="_blank"><img class='w-auto h-auto' alt='ig Logo'
+                            src='img/FacebookLink.png' /></a>
+
+                </div>
+                <div class='flex flex-col md:flex-row text-[15px] gap-5'>
+                    <div class='flex flex-col xl:flex-row gap-5'>
+                        <a href='pages/quality.html' class='flex gap-2 items-center cursor-pointer'>
+                            <p class='text-lg'>></p>
+                            <p class=' font-light'>POLÍTICAS DE CALIDAD</p>
+                        </a>
+                        <a href='/about' class='flex gap-2 items-center cursor-pointer'>
+                            <p class='text-lg'>></p>
+                            <p class=' font-light'>HABLEMOS POR WHATSAPP</p>
+                        </a>
+                    </div>
+                    <div class='flex flex-col xl:flex-row gap-5'>
+                        <a href='/contact' class='flex gap-2 items-center cursor-pointer'>
+
+                            <p class='text-lg'>></p>
+                            <p class='font-light'>NUESTROS PRODUCTOS</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href='/' class='w-full xl:w-auto'>
+                <img src='img/WhiteLogo.png' alt="" />
+            </a>
+        </div>
+        <div class='h-[2px] w-full bg-white mb-[22px]'></div>
+        <div class='flex flex-col md:flex-row justify-between font-light text-white gap-x-10 gap-y-5'>
+            <p>COPYRIGHT 2023 - INDUSTRIAS MENGARELLI TODOS LOS DERECHOS RESERVADOS</p>
+            <p>DESARROLLO & DISEÑO BY <span class=' font-bold'>AXYOMAGLOBAL</span></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <!-- JS -->
+    <!-- CAROUSEL LOGIC -->
+    <script>
+        const slider = document.getElementById('slider');
+        const sliderItems = document.querySelectorAll('.slider-item');
+        const sliderhidden = document.querySelectorAll('.hidden');
+        console.log(sliderhidden.length)
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const newPosition = -index * 100;
+            slider.style.transform = `translateX(${newPosition}vw)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % sliderItems.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 4000);
+
+    </script>
+
+
+    <!-- NAVBAR TOGGLES -->
+    <script type="text/javascript" src="./navbar.js"></script>
+
+</body>
+
+</html>

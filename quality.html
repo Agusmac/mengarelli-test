@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengarelli</title>
+
+<!-- IMPORTANT! KEEP THE CDN FOR THE STYLES TO WORK -->
+    <script src="https://cdn.tailwindcss.com"></script>
+<!-- IMPORTANT! KEEP THE CDN FOR THE STYLES TO WORK -->
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="">
+
+    <!-- NAVBAR -->
+    <div
+        class="navbar h-24 sm:h-[156px] relative z-10 w-full flex items-center justify-between bg-[#232323] px-[8vw] md:px-[6vw]">
+        <a href="/">
+            <div class='max-w-[25vw]'><img src='img/NavbarLogo.png' alt="" /></div>
+        </a>
+        <div class='hidden lg:flex text-base font-bold space-x-9 justify-end items-center'>
+            <a href="/">
+                <p class="cursor-pointer">INICIO</p>
+            </a>
+            <div onclick="toggleMenu()" class="flex items-center justify-center gap-2 cursor-pointer">PRODUCTOS
+                <span class="text-xl ">
+                    <img src='img/Arrow.png' alt="" />
+                </span>
+            </div>
+            <a href="">
+                <p class="cursor-pointer">EMPRESA</p>
+            </a>
+            <a href='quality.html'>
+                <p class="cursor-pointer">POLÍTICAS DE CALIDAD</p>
+            </a>
+
+            <a href='contact.html'>
+                <p class="cursor-pointer">CONTACTO</p>
+            </a>
+            <div class='flex items-center space-x-[10px]'>
+                <img class="cursor-pointer" src='img/InstaLink.png' alt="" />
+                <img class="cursor-pointer" src='img/FacebookLink.png' alt="" />
+                <img class="cursor-pointer" src='img/LinkedinLink.png' alt="" />
+            </div>
+        </div>
+        <div onclick="toggleMenuMobile()" class='lg:hidden inline-block'> <img src='img/Burguer.png' alt="" /></div>
+
+
+        <div id="menu"
+            class="hidden absolute bg-[#2E2E2E] navbar pt-9 pb-12 w-full inset-x-0 top-full px-[8vw] md:px-[6vw]">
+            <div class="mx-auto mb-6">
+                <p class="font-bold mb-2">CATEGORIAS DE PRODUCTOS</p>
+                <div class="w-full h-[1px] bg-white"></div>
+            </div>
+            <div>
+                <div class='flex justify-center 2xl:justify-between gap-5'>
+                    <div class='grid md:grid-cols-2 xl:grid-cols-3 gap-y-11 relative '>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg'>
+                                <img class="w-[90px]" src='img/Racks1.png' alt="" />
+                                <div class='md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>RACKS</p>
+                                    <p>Calidad e innovación.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg '>
+                                <img class="" src='img/Racks2.png' alt="" />
+                                <div class=' md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>GÓNDOLAS</p>
+                                    <p>Excelencia y calidad.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg '>
+                                <img class="" src='img/Racks3.png' alt="" />
+                                <div class='md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>VERDULERÍA</p>
+                                    <p>Calidad e innovación.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg '>
+                                <img class="" src='img/Racks4.png' alt="" />
+                                <div class='md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>MOSTRADORES</p>
+                                    <p>Resistentes con líneas <br /> de diseño.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex items-center gap-x-6 limitImg '>
+                                <img class="" src='img/Racks5.png' alt="" />
+                                <div class='md:text-lg font-light'>
+                                    <p class='text-lg md:text-xl font-bold'>PASILLOS DE REVISIÓN</p>
+                                    <p>Nuevo modelo con <br /> espacio para CPU.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/products.html">
+                            <div class='flex '>
+                                <div class='flex items-center gap-x-6 limitImg '>
+                                    <img class="" src='img/Racks6.png' alt="" />
+                                    <div class='md:text-lg font-light'>
+                                        <p class='text-lg md:text-xl font-bold'>ARTICULOS DE ALAMBRE</p>
+                                        <p>Durables y funcionables.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <img class="max-h-56 hidden 2xl:block" src="img/headerImgNavbar.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- hidden -->
+    </div>
+    <!-- NAVBAR -->
+
+    <!-- MENU (desplegable mobile) -->
+
+    <div id="menu-mobile"
+        class="hidden z-50 fixed bg-[#232323] max-h-[100vh] text-base w-full overflow-y-auto inset-0 ">
+
+        <div
+            class="mb-5 h-24 sm:h-[156px] relative z-10 w-full flex items-center justify-between  px-[8vw] md:px-[6vw]">
+            <div class='max-w-[25vw]'><img src='img/NavbarLogo.png' alt="" /></div>
+            <div onclick="toggleMenuMobile()" class=''> <img src='img/Burguer.png' alt="" /></div>
+            <!-- hidden -->
+        </div>
+
+        <div class="mx-auto max-w-[80vw] ">
+            <div class="mb-5">
+                <a href="/">
+                    <p class="font-bold mb-2">INICIO</p>
+                    <div class="w-full h-[1px] bg-[#FC030A]"></div>
+                </a>
+            </div>
+            <div class="mb-5">
+                <div onclick="toggleMobileProductGrid()" class="flex w-full justify-between items-center">
+                    <p class="font-bold mb-2">PRODUCTOS</p>
+                    <img src='img/Arrow.png' alt="" />
+                </div>
+                <div class="w-full h-[1px] bg-[#FC030A]"></div>
+            </div>
+
+
+
+
+            <!-- Products section-mobile menu -->
+            <div id="mobile-product-grid"
+                class='hidden  grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-2 mb-5 relative '>
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg'>
+                        <img class="w-[48px]" src='img/Racks1.png' alt="" />
+                        <div class='font-light'>
+                            <p class='font-bold'>RACKS</p>
+                            <!-- <p class="text-sm">Calidad e innovación.</p> -->
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg '>
+                        <img class="w-[48px]" src='img/Racks2.png' alt="" />
+                        <div class='md:text-lg font-light'>
+                            <p class=' font-bold'>GÓNDOLAS</p>
+                            <!-- <p class="text-sm">Excelencia y calidad.</p> -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg '>
+                        <img class="w-[48px]" src='img/Racks3.png' alt="" />
+                        <div class='md:text-lg font-light'>
+                            <p class='font-bold'>VERDULERÍA</p>
+                            <!-- <p class="text-sm">Calidad e innovación.</p> -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg '>
+                        <img class="w-[48px]" src='img/Racks4.png' alt="" />
+                        <div class='md:text-lg font-light'>
+                            <p class='font-bold'>MOSTRADORES</p>
+                            <!-- <p class="text-sm">Resistentes con líneas <br /> de diseño.</p> -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/products.html">
+                    <div class='flex items-center gap-x-6 limitImg '>
+                        <img class="w-[48px]" src='img/Racks5.png' alt="" />
+                        <div class='md:text-lg font-light'>
+                            <p class='font-bold'>PASILLOS DE REVISIÓN</p>
+                            <!-- <p class="text-sm">Nuevo modelo con <br /> espacio para CPU.</p> -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/products.html">
+                    <div class='flex '>
+                        <div class='flex items-center gap-x-6 limitImg '>
+                            <img class="w-[48px]" src='img/Racks6.png' alt="" />
+                            <div class='md:text-lg font-light'>
+                                <p class='font-bold'>ARTICULOS DE ALAMBRE</p>
+                                <!-- <p class="text-sm">Durables y funcionables.</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Products section-mobile menu -->
+
+
+            <div class="mb-5">
+                <a href="/">
+                    <p class="font-bold mb-2">EMPRESA</p>
+                    <div class="w-full h-[1px] bg-[#FC030A]"></div>
+                </a>
+            </div>
+            <div class="mb-5">
+                <a href="quality.html">
+                    <p class="font-bold mb-2">POLÍTICAS DE CALIDAD</p>
+                    <div class="w-full h-[1px] bg-[#FC030A]"></div>
+                </a>
+            </div>
+            <div class="mb-5">
+                <a href="contact.html">
+                    <p class="font-bold mb-2">CONTACTO</p>
+                    <div class="w-full h-[1px] bg-[#FC030A]"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- MENU (desplegable mobile)-->
+
+
+
+
+
+
+    <!-- CONTENT  -->
+    <div class="sm:px-5 md:px-20 mb-20 ">
+        <div class='flex mt-14 sm:mt-28 justify-center items-center gap-14 mb-16 max-w-[82vw] mx-auto'>
+            <div class='hidden sm:inline-block h-[2px] w-full bg-[#C3232A]'></div>
+            <div class='text-center whitespace-nowrap'>
+                <p class='font-bold text-2xl md:text-xl'>POLÍTICA DE CALIDAD</p>
+            </div>
+            <div class='hidden sm:inline-block h-[2px] w-full bg-[#C3232A]'></div>
+        </div>
+
+        <div class="mx-auto max-w-[1400px] flex flex-col xl:flex-row gap-20 sm:text-lg leading-[1.8] sm:leading-relaxed">
+            <div class='flex-1 flex flex-col items-center'>
+                <img class='xl:max-h-[225.15px] mb-8 sm:mb-16' src="../img/Calidad1.jpg" alt="" />
+                <p class="px-5 sm:px-0">Industrias Mengarelli considera que la Calidad es un elemento estratégico. Es por ello que nos
+                    comprometemos a satisfacer las expectativas del cliente y requisitos aplicables, esforzándonos cada
+                    día por perfeccionar nuestros productos y servicios a través de la mejora continua de nuestro
+                    Sistema de Gestión de Calidad.</p>
+            </div>
+            <div class='flex-1 flex flex-col items-center'>
+                <img class='xl:max-h-[225.15px] mb-8 sm:mb-16' src="../img/Calidad2.jpg" alt="" />
+                <p class='xl:max-w-[468px] px-5 sm:px-0'>En Industrias Mengarelli reconocemos que nuestros pilares fundamentales son:
+                    <br />
+                    • La evolución permanente y el involucramiento de nuestro personal <br />
+                    • La investigación de las necesidades de los mercados en los que participamos<br />
+                    • La innovación de nuestros productos<br />
+                    <br /><br />
+                    Esta política es asumida por la Dirección de la Empresa, y constituye una responsabilidad compartida
+                    por todos mediante su entendimiento y la aplicación en su trabajo cotidiano.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <!-- CONTENT -->
+
+    <!-- FOOTER -->
+    <div class='w-full bg-[#C3232A] px-[6vw] text-white pt-[69px] pb-8 '>
+        <div class='flex flex-col-reverse xl:flex-row items-end mb-8 gap-y-10'>
+            <div class='flex flex-1 flex-col w-full xl:w-auto justify-between mb'>
+                <div class='flex gap-3 mb-[34px]'>
+
+                    <a href="/" target="_blank"><img class='w-auto h-auto' alt='ig Logo'
+                            src='../img/LinkedinLink.png' /></a>
+
+                    <a href="/" target="_blank"><img class='w-auto h-auto' alt='ig Logo'
+                            src='../img/InstaLink.png' /></a>
+
+                    <a href="/" target="_blank"><img class='w-auto h-auto' alt='ig Logo'
+                            src='../img/FacebookLink.png' /></a>
+
+                </div>
+                <div class='flex flex-col md:flex-row text-[15px] gap-5'>
+                    <div class='flex flex-col xl:flex-row gap-5'>
+                        <a href='/services' class='flex gap-2 items-center cursor-pointer'>
+                            <p class='text-lg'>></p>
+                            <p class=' font-light'>POLITICAS DE CALIDAD</p>
+                        </a>
+                        <a href='/about' class='flex gap-2 items-center cursor-pointer'>
+                            <p class='text-lg'>></p>
+                            <p class=' font-light'>HABLEMOS POR WHATSAPP</p>
+                        </a>
+                    </div>
+                    <div class='flex flex-col xl:flex-row gap-5'>
+                        <a href='/contact' class='flex gap-2 items-center cursor-pointer'>
+
+                            <p class='text-lg'>></p>
+                            <p class='font-light'>NUESTROS PRODUCTOS</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href='/' class='w-full xl:w-auto'>
+                <img src='../img/WhiteLogo.png' alt="" />
+            </a>
+        </div>
+        <div class='h-[2px] w-full bg-white mb-[22px]'></div>
+        <div class='flex flex-col md:flex-row justify-between font-light text-white gap-x-10 gap-y-5'>
+            <p>COPYRIGHT 2023 - INDUSTRIAS MENGARELLI TODOS LOS DERECHOS RESERVADOS</p>
+            <p>DESARROLLO & DISEÑO BY <span class=' font-bold'>AXYOMAGLOBAL</span></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <!-- JS -->
+    <script type="text/javascript" src="./navbar.js"></script>
+
+</body>
+
+</html>
