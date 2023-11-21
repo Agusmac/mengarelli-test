@@ -11,16 +11,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body >
+<body>
 
     <!-- NAVBAR -->
     <div
         class="navbar h-24 sm:h-[156px] relative z-10 w-full flex items-center justify-between bg-[#232323] px-[8vw] md:px-[6vw]">
-        <a href="/">
+        <a href="index.html">
             <div class='max-w-[25vw]'><img src='img/NavbarLogo.png' alt="" /></div>
         </a>
         <div class='hidden lg:flex text-base font-bold space-x-9 justify-end items-center'>
-            <a href="/">
+            <a href="index.html">
                 <p class="cursor-pointer">INICIO</p>
             </a>
             <div onclick="toggleMenu()" class="flex items-center justify-center gap-2 cursor-pointer">PRODUCTOS
@@ -136,7 +136,7 @@
 
         <div class="mx-auto max-w-[80vw] ">
             <div class="mb-5">
-                <a href="/">
+                  <a href="index.html">
                     <p class="font-bold mb-2">INICIO</p>
                     <div class="w-full h-[1px] bg-[#FC030A]"></div>
                 </a>
@@ -218,7 +218,7 @@
 
 
             <div class="mb-5">
-                <a href="/">
+                  <a href="index.html">
                     <p class="font-bold mb-2">EMPRESA</p>
                     <div class="w-full h-[1px] bg-[#FC030A]"></div>
                 </a>
@@ -249,7 +249,7 @@
     </div> -->
 
     <div id="slider-container overflow-hidden w-screen relative">
-        <div id="slider" class="duration-500 ease-in-out flex my-14">
+        <div id="slider" class="duration-500 ease-in-out flex mb-14">
             <div class="slider-item">
                 <!-- desktop banner -->
                 <img class=" min-w-[100vw] hidden md:block h-auto" src='img/Banner-Home-1.jpg' alt="" />
@@ -418,7 +418,16 @@
                         Almacenaje, Estiba y Equipamiento comercial, satisfaciendo las necesidades de nuestros clientes,
                         basándonos en los valores que guían nuestro proceder.</p>
                 </div>
-                <div class="flex-1 self-center"><img src='img/VideoPlaceholder.png' alt="" /></div>
+                <div class="flex-1 self-center">
+                    <div class="max-w-full">
+                        <iframe class="max-w-full" width="560" height="315"
+                            src="https://www.youtube.com/embed/jZEV8mRIYdE?si=lFw4CwvvhyFTimaH"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <!-- <img src='img/VideoPlaceholder.png' alt="" /> -->
+                </div>
             </div>
         </div>
 
